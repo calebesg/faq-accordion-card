@@ -25,7 +25,6 @@ body {
   align-items: center;
 }
 
-/* Card ----------------- */
 .card {
   position: relative;
   width: 90%;
@@ -65,17 +64,17 @@ body {
   font-size: 1.85rem;
 }
 
-.questions {
+.accordion {
   list-style: none;
   margin-top: 1.125rem;
 }
 
-.questions .item {
+.accordion-item {
   padding: 1rem 0;
   border-bottom: 0.03125rem solid var(--dark-blue);
 }
 
-.item .question {
+.accordion-item .question {
   text-decoration: none;
   color: var(--dark-blue);
   font-size: 0.85rem;
@@ -86,8 +85,22 @@ body {
   gap: 2rem;
 }
 
-.item .answer {
-  opacity: 0;
-  height: 0;
+.accordion-item .question .icon {
+  transition: all .6s;
+}
+
+.accordion-item .answer {
+  max-height: 0;
   overflow: hidden;
+
+  transition: max-height 0.6s;
+}
+
+.accordion-item:target .answer {
+  max-height: 20rem;
+  padding-top: 1rem;
+}
+
+.accordion-item:target .question .icon {
+  transform: rotateX(180deg);
 }
