@@ -28,7 +28,6 @@ body {
 }
 
 .card {
-  position: relative;
   width: 90%;
   margin-top: 140px;
   margin-bottom: 80px;
@@ -39,21 +38,28 @@ body {
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
-.card::before {
-  content: url(./images/bg-pattern-mobile.svg);
+.image-bg {
+  position: relative;
+  height: 105px;
+  width: 240px;
+  background-image: url(./images/bg-pattern-mobile.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.image-wrap {
+.image-woman {
   position: absolute;
-  background: url(./images/illustration-woman-online-mobile.svg) center no-repeat;
-  width: 100%;
-  height: 11.25rem;
-
-  top: -6.875rem;
+  margin-top: -6.8rem;
+  height: 180px;
+  width: 240px;
+  background-image: url(./images/illustration-woman-online-mobile.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 #faq {
@@ -113,42 +119,66 @@ body {
   transform: rotateX(180deg);
 }
 
-@media (min-width: 62.5rem) { /* 1000px */
+@media (min-width: 62.5rem) {
   .card {
+    position: relative;
     margin: 0;
     padding: 0;
-    width: 57.5rem;
     height: 31.875rem;
-    flex-direction: row;
-    align-items: center;
-    overflow: hidden;
+    width: 57.5rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 
   .card::before {
-    content: "";
+    content: url(./images/illustration-box-desktop.svg);
     position: absolute;
-    top: -140px;
-    left: -600px;
-    right: 530px;
-    bottom: 0;
-    background: url(./images/bg-pattern-desktop.svg) no-repeat;
-    background-size: cover;
-    background-position: right;
-    overflow: hidden;
+    left: -5.75rem;
+    width: 5.625rem;
+    height: 6.25rem;
+    margin-top: 1.25rem;
     z-index: 1;
   }
 
   .image-wrap {
-    position: static;
-    background: url(./images/illustration-woman-online-desktop.svg) center no-repeat;
-    height: 22.375rem;
-    width: 100%;
-    margin-left: -10rem;
-    z-index: 2;
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .image-bg {
+    position: absolute;
+    top: -19.5rem;
+    height: 62.5rem;
+    width: 26.875rem;
+    left: -3rem;
+    background-image: url(./images/bg-pattern-desktop.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+  
+  .image-woman {
+    position: absolute;
+    top: 30rem;
+    left: -2rem;
+    height: 25rem;
+    width: 29rem;
+    background-image: url(./images/illustration-woman-online-desktop.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
   #faq {
     margin-top: 0;
-    overflow: hidden;
+    max-width: 21.875rem;
+  }
+
+  #faq .title {
+    text-align: left;
   }
 }
