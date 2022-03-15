@@ -32,7 +32,7 @@ body {
   margin-top: 140px;
   margin-bottom: 80px;
   padding: 0 1.5rem 3rem;
-  background-color: var(--light-blue);
+  background-color: white;
   border-radius: 1.25rem;
   box-shadow: 0 2rem 3rem hsla(238, 29%, 16%, 0.4);
 
@@ -79,7 +79,7 @@ body {
 
 .accordion-item {
   padding: 1rem 0;
-  border-bottom: 0.03125rem solid hsla(240, 6%, 50%, 0.4);
+  border-bottom: 0.03125rem solid var(--light-blue);
 }
 
 .accordion-item .question {
