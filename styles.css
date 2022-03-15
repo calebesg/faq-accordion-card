@@ -79,7 +79,7 @@ body {
 
 .accordion-item {
   padding: 1rem 0;
-  border-bottom: 0.03125rem solid var(--dark-blue);
+  border-bottom: 0.03125rem solid hsla(240, 6%, 50%, 0.4);
 }
 
 .accordion-item .question {
